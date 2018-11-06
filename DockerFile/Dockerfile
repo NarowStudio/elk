@@ -8,7 +8,6 @@ RUN apt install apt-utils sudo -y
 RUN apt install vim vim-g* vim-n* vim-t* curl ctags wget -y 
 RUN apt install python python-pip cmake git -y 
 RUN apt install iputils* -y 
-RUN ufw disable
 ADD .vimrc /home/narow/
 RUN apt install software-properties-common -y 
 RUN add-apt-repository ppa:openjdk-r/ppa -y 
