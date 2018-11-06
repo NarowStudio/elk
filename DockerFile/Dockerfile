@@ -27,8 +27,8 @@ RUN mv elasticsearch-6.4.2.zip bak/
 
 RUN wget https://artifacts.elastic.co/downloads/logstash/logstash-6.4.2.zip
 RUN unzip logstash-6.4.2.zip
-RUN chown narow logstash/ -R
 RUN mv logstash-6.4.2 logstash
+RUN chown narow logstash/ -R
 RUN mv logstash-6.4.2.zip bak/
 ADD status-log.conf /opt/logstash/config/
 
