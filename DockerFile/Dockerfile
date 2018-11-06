@@ -19,24 +19,24 @@ RUN apt install libpcap0.8 -y
 RUN apt upgrade -y
 
 RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.2.zip
-RUN mv elasticsearch-6.4.2.zip elasticsearch.zip
-RUN unzip elasticsearch.zip
-RUN chown narow /opt/elasticsearch/ -R
+RUN unzip elasticsearch-6.4.2.zip
+RUN mv elasticsearch-6.4.2 elastic
+RUN chown narow elastic/ -R
 RUN mkdir bak
-RUN mv elasticsearch.zip /opt/bak/
+RUN mv elasticsearch-6.4.2.zip bak/
 
 RUN wget https://artifacts.elastic.co/downloads/logstash/logstash-6.4.2.zip
-RUN mv logstash-6.4.2.zip logstash.zip
-RUN unzip logstash.zip
-RUN chown narow /opt/logstash -R
-RUN mv logstash.zip /opt/bak/
+RUN unzip logstash-6.4.2.zip
+RUN chown narow logstash/ -R
+RUN mv logstash-6.4.2 logstash
+RUN mv logstash-6.4.2.zip bak/
 ADD status-log.conf /opt/logstash/config/
 
 RUN wget https://artifacts.elastic.co/downloads/kibana/kibana-6.4.2-linux-x86_64.tar.gz
-RUN mv kibana-6.4.2-linux-x86_64.tar.gz kibana.tar.gz
-RUN tar xzvf kibana.tar.gz
+RUN tar xzvf kibana-6.4.2-linux-x86_64.tar.gz
+RUN mv kibana-6.4.2-linux-x86_64 kibana
 RUN chown narow /opt/kibana -R
-RUN mv kibana.tar.gz /opt/bak/
+RUN mv kibana-6.4.2-linux-x86_64.tar.gz bak/
 
 RUN git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
 
