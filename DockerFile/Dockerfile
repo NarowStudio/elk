@@ -38,5 +38,5 @@ RUN mv kibana-6.4.2-linux-x86_64 kibana
 RUN chown narow /opt/kibana -R
 RUN mv kibana-6.4.2-linux-x86_64.tar.gz bak/
 
-RUN git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+RUN git clone https://github.com/VundleVim/Vundle.vim.git home/narow/.vim/bundle/Vundle.vim 
 
