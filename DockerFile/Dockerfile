@@ -18,7 +18,7 @@ RUN apt upgrade -y
 RUN apt install libpcap0.8 -y
 RUN apt upgrade -y
 
-RUN wgethttps://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.2.zip
+RUN wget https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.2.zip
 RUN mv elasticsearch-6.4.2.zip /opt/elasticsearch.zip
 RUN unzip /opt/elasticsearch.zip
 RUN chown narow elasticsearch/ -R
