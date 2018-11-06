@@ -18,21 +18,21 @@ RUN apt update -y
 RUN apt install libpcap0.8 -y
 RUN apt upgrade -y
 
-RUN curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.2.zip
+RUN wgethttps://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-6.4.2.zip
 RUN mv elasticsearch-6.4.2.zip /opt/elasticsearch.zip
 RUN unzip /opt/elasticsearch.zip
 RUN chown narow elasticsearch/ -R
 RUN mkdir /opt/bak
 RUN mv /opt/elasticsearch.zip /opt/bak/
 
-RUN curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-6.4.2.zip
+RUN wget https://artifacts.elastic.co/downloads/logstash/logstash-6.4.2.zip
 RUN mv logstash-6.4.2.zip /opt/logstash.zip
 RUN unzip /opt/logstash.zip
 RUN chown narow logstash/ -R
 RUN mv /opt/logstash.zip /opt/bak/
 ADD status-log.conf /opt/logstash/config/
 
-RUN curl -L -O https://artifacts.elastic.co/downloads/kibana/kibana-6.4.2-linux-x86_64.tar.gz
+RUN wget https://artifacts.elastic.co/downloads/kibana/kibana-6.4.2-linux-x86_64.tar.gz
 RUN mv kibana-6.4.2-linux-x86_64.tar.gz /opt/kibana.tar.gz
 RUN tar xzvf kibana.tar.gz
 RUN chown narow kibana/ -R
