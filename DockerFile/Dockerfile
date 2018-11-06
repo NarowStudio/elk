@@ -13,8 +13,8 @@ RUN add-apt-repository ppa:openjdk-r/ppa -y
 RUN apt update -y 
 RUN apt install openjdk-8-jdk -y 
 RUN apt install apt-utils sudo -y
-RUN apt upgrade -y
 RUN apt update -y
+RUN apt upgrade -y
 RUN apt install libpcap0.8 -y
 RUN apt upgrade -y
 
