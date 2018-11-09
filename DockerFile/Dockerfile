@@ -4,23 +4,10 @@ WORKDIR /opt/
 RUN useradd -ms /bin/bash narow
 RUN apt update -y
 RUN apt upgrade -y
-RUN apt install apt-utils -y
-RUN apt install sudo -y
-RUN apt install vim -y 
-RUN apt install vim-g* -y
-RUN apt install vim-n* -y
-RUN apt install vim-t* -y
-RUN apt install curl -y
-RUN apt install ctags -y
-RUN apt install wget -y
-RUN apt install python  -y
-RUN apt install python-pip -y
-RUN apt install cmake -y
-RUN apt install git -y
-RUN apt install iputils* -y
-RUN apt install net-tools -y
-RUN apt install libpcap0.8 -y
+RUN apt install apt-utils sudo curl ctags wget python python-pip cmake git iputils* net-tools libpcap0.8 vim vim-g* vim-n* vim-t* -y
+
 ADD .vimrc /home/narow/
+
 RUN apt install software-properties-common -y 
 RUN add-apt-repository ppa:openjdk-r/ppa -y 
 RUN apt update -y 
