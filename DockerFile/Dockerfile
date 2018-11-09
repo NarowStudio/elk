@@ -4,7 +4,9 @@ WORKDIR /opt/
 RUN useradd -ms /bin/bash narow
 RUN apt update -y
 RUN apt upgrade -y
-RUN apt install apt-utils sudo curl ctags wget python python-pip cmake git iputils* net-tools libpcap0.8 vim vim-g* vim-n* vim-t* -y
+RUN apt install apt-utils sudo ctags python python-pip cmake libpcap0.8 -y
+RUN apt install curl wget git iputils* net-tools -y
+RUN apt install vim vim-g* vim-n* vim-t* -y
 
 ADD .vimrc /home/narow/
 
